@@ -1,5 +1,5 @@
 ﻿#!/bin/bash
-#Script de acesso aos pdvs, servidores Makro e utilitários
+#Script de acesso aos pdvs, servidores Cliente e utilitários
 #criado por Leandro Camargo
 #Versão_1
 rm -rf /root/.ssh/known_hosts
@@ -43,7 +43,7 @@ echo "       Aguarde, Acessando Loja: $loja, Pdv $pdv            "
 echo "###########################################################"
 sleep 2 
 
-sshpass -p "lingerseness" ssh -o StrictHostKeyChecking=no root@10.52.$loja.$pdv
+sshpass -p "senha123" ssh -o StrictHostKeyChecking=no root@10.52.$loja.$pdv
 
 echo "###########################################################"
 echo "             Obrigado por usar o Acesso.                   " 
@@ -56,49 +56,49 @@ clear
 echo " _____________________________________________________ "
 echo "|      "Digite o número do SERVIDOR desejado"         |"
 echo "|                                                     |"
-echo "|  -1- BRSPZAN02 -111-> Aplicação - Pré-Prodrução     |"
-echo "|  -2- BRSPZAN06 -135-> Mirage 1 -Lojas Impares       |"
-echo "|  -3- BRSPZAN07 -137-> Mirage 2 -Lojas pares         |"
-echo "|  -4- BRSPZAN09 -120-> Arquivos (NFS)                |"
-echo "|  -5- BRSPZAN03 -155-> Aplicação 1                   |"
-echo "|  -6- BRSPZAN04 -156-> Aplicação 2                   |"
-echo "|  -7- BRSPZAN05 -157-> Aplicação 3                   |"
-echo "|  -8- BRSPZAN08 -181-> Homologação                   |"
+echo "|  -1- SERVZAN02 -111-> Aplicação - Pré-Prodrução     |"
+echo "|  -2- SERVZAN06 -135-> Mirage 1 -Lojas Impares       |"
+echo "|  -3- SERVZAN07 -137-> Mirage 2 -Lojas pares         |"
+echo "|  -4- SERVZAN09 -120-> Arquivos (NFS)                |"
+echo "|  -5- SERVZAN03 -155-> Aplicação 1                   |"
+echo "|  -6- SERVZAN04 -156-> Aplicação 2                   |"
+echo "|  -7- SERVZAN05 -157-> Aplicação 3                   |"
+echo "|  -8- SERVZAN08 -181-> Homologação                   |"
 echo "|                                                     |"
 echo "|______________Exemplo digite: 3 para acessar o 137___|"
 read servidor;
 
 	if [ $servidor -eq 1 ]
 	then
-sshpass -p "makro@20" ssh -o StrictHostKeyChecking=no t_lfagundes@10.52.234.111
+sshpass -p "Cliente@20" ssh -o StrictHostKeyChecking=no t_lfagundes@10.52.234.111
 
 	elif [ $servidor -eq 2 ]
 	then
-sshpass -p "makro@20" ssh -o StrictHostKeyChecking=no t_lfagundes@10.52.234.135
+sshpass -p "Cliente@20" ssh -o StrictHostKeyChecking=no t_lfagundes@10.52.234.135
 	
 	elif [ $servidor -eq 3 ] 
 	then
-sshpass -p "makro@20" ssh -o StrictHostKeyChecking=no t_lfagundes@10.52.234.137
+sshpass -p "Cliente@20" ssh -o StrictHostKeyChecking=no t_lfagundes@10.52.234.137
 	
 	elif [ $servidor -eq 4 ] 
 	then
-sshpass -p "makro@20" ssh -o StrictHostKeyChecking=no t_lfagundes@10.52.234.120
+sshpass -p "Cliente@20" ssh -o StrictHostKeyChecking=no t_lfagundes@10.52.234.120
 	
 	elif [ $servidor -eq 5 ] 
 	then
-sshpass -p "makro@20" ssh -o StrictHostKeyChecking=no t_lfagundes@10.52.234.155
+sshpass -p "Cliente@20" ssh -o StrictHostKeyChecking=no t_lfagundes@10.52.234.155
 	
 	elif [ $servidor -eq 6 ] 
 	then
-sshpass -p "makro@20" ssh -o StrictHostKeyChecking=no t_lfagundes@10.52.234.156
+sshpass -p "Cliente@20" ssh -o StrictHostKeyChecking=no t_lfagundes@10.52.234.156
 	
 	elif [ $servidor -eq 7 ] 
 	then
-sshpass -p "makro@20" ssh -o StrictHostKeyChecking=no t_lfagundes@10.52.234.157
+sshpass -p "Cliente@20" ssh -o StrictHostKeyChecking=no t_lfagundes@10.52.234.157
 
         elif [ $servidor -eq 8 ]
         then
-sshpass -p "makro@20" ssh -o StrictHostKeyChecking=no t_lfagundes@10.52.239.181
+sshpass -p "Cliente@20" ssh -o StrictHostKeyChecking=no t_lfagundes@10.52.239.181
 
 	else 
 echo "###########################################################"
@@ -174,7 +174,7 @@ read pdv;
                 else
                         echo "PDV ONLINE"
                         echo "A Configuração será iniciada..."
-sshpass -p "lingerseness" scp Set_perfAgosto2017 root@10.52.$loja.$pdv:/root/;sshpass -p "lingerseness" ssh -o StrictHostKeyChecking=no root@10.52.$loja.$pdv "./Set_perfAgosto2017";
+sshpass -p "senha123" scp Set_perfAgosto2017 root@10.52.$loja.$pdv:/root/;sshpass -p "senha123" ssh -o StrictHostKeyChecking=no root@10.52.$loja.$pdv "./Set_perfAgosto2017";
                         echo "Configuração Concluída!"
                         ./acesso.sh
                 fi

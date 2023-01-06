@@ -13,7 +13,7 @@ do
 	echo "Criando a pasta da loja"
 	mkdir /mnt/Loja$loja
 	echo "Montando o path_comum"
-	mount -t cifs -s -o username=serviceZEUS,password=8AXtv5Q94fdI,domain=BRSPMAKRO,rw //10.52.$loja.30/path_comum_0$loja$ /mnt/Loja$loja
+	mount -t cifs -s -o username=serviceZEUS,password=senhapath,domain=BRSPcliente,rw //10.52.$loja.30/path_comum_0$loja$ /mnt/Loja$loja
 #AJUSTANDO A CARGA INICIAL
 #	echo "Copiando os arquivos"
 #	cp /home/leandro/ConfiguradorNovo/ArqsNovaCarga.tar.gz /mnt/Loja$loja/cargainicial/
@@ -26,7 +26,7 @@ do
 #	cp /home/leandro/ProcessosLinux/CARG0102.CFG /mnt/Loja$loja/GERALCFG/
 
 #       echo "Copiando o ECF9A"
-#       cp /home/leandro/pdvMakro/ECF9A.CFG /mnt/Loja$loja/GERALCFG/
+#       cp /home/leandro/pdvcliente/ECF9A.CFG /mnt/Loja$loja/GERALCFG/
 #       rm -rf /mnt/Loja$loja/ECFCFG/0*
 
        echo "Copiando o CFG_PAR"

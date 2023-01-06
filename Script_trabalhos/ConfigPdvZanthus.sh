@@ -1,5 +1,6 @@
 ﻿#!/bin/bash
-#Este script foi criado com o intuito de automatizar as configurações dos pdvs Makro
+#byLeandroCamargo
+#Este script foi criado com o intuito de automatizar as configurações dos pdvs CLIENTE
 #Apos a formatacao do pdv, usamos este script para ajustar a configurações
 #para SAT, NFCE ou ECF.
 #Bem vindo ao Configurador PDV Zanthus.
@@ -11,9 +12,9 @@ echo "| |  _ \ / _ \  _   _ \   \ \ / /| |  _ \ / _  |/ _ \| | | "
 echo "| | |_) |  __/ | | | | |   \ V / | | | | | (_| | (_) |_| | "
 echo "| |____/ \___|_| |_| |_|    \_/  |_|_| |_|\__ _|\___/(_) | "
 echo "|                                  ______________________| "
-echo "|                                 |"
-echo "| CONFIGURANDO PDV ZANTHUS MAKRO! |"
-echo "|_________________________________|"
+echo "|                                   |"
+echo "| CONFIGURANDO PDV ZANTHUS CLIENTE! |"
+echo "|________________________________ __|"
 sleep 2 
 
 #Finalizando os programas abertos
@@ -32,12 +33,12 @@ loja=`ifconfig | grep "ine" | sed -n 1p | cut -d: -f2 | cut -d" " -f2 | cut -d. 
 
 if [ "$loja" -lt "10" ]; then
 
-mount -t cifs -s -o username=serviceZEUS,password=8AXtv5Q94fdI,domain=BRSPMAKRO,rw //10.52.$loja.30/path_comum_00$loja$ /Zanthus/Zeus/path_comum
-mount="mount -t cifs -s -o username=serviceZEUS,password=8AXtv5Q94fdI,domain=BRSPMAKRO,rw \/\/10.52.$loja.30\/path_comum_00$loja$ \/Zanthus\/Zeus\/path_comum"
+mount -t cifs -s -o username=serviceZEUS,password=senhapath,domain=BRSPCLIENTE,rw //10.52.$loja.30/path_comum_00$loja$ /Zanthus/Zeus/path_comum
+mount="mount -t cifs -s -o username=serviceZEUS,password=senhapath,domain=BRSPCLIENTE,rw \/\/10.52.$loja.30\/path_comum_00$loja$ \/Zanthus\/Zeus\/path_comum"
 else
 
-mount -t cifs -s -o username=serviceZEUS,password=8AXtv5Q94fdI,domain=BRSPMAKRO,rw //10.52.$loja.30/path_comum_0$loja$ /Zanthus/Zeus/path_comum
-mount="mount -t cifs -s -o username=serviceZEUS,password=8AXtv5Q94fdI,domain=BRSPMAKRO,rw \/\/10.52.$loja.30\/path_comum_0$loja$ \/Zanthus\/Zeus\/path_comum"
+mount -t cifs -s -o username=serviceZEUS,password=senhapath,domain=BRSPCLIENTE,rw //10.52.$loja.30/path_comum_0$loja$ /Zanthus/Zeus/path_comum
+mount="mount -t cifs -s -o username=serviceZEUS,password=senhapath,domain=BRSPCLIENTE,rw \/\/10.52.$loja.30\/path_comum_0$loja$ \/Zanthus\/Zeus\/path_comum"
 fi
 
 #Configurando o enviroment
@@ -63,7 +64,7 @@ echo "Criando diretorio e inserindo o arquivo timezone"
 mkdir /root/bin
 cp /Zanthus/Zeus/path_comum/cargainicial/set_timezone_pdvs.bash /root/bin/
 
-/usr/sbin/ntpdate zeus.makro.com.br
+/usr/sbin/ntpdate zeus.CLIENTE.com.br
 
 /root/bin/set_timezone_pdvs.bash
 
@@ -100,8 +101,8 @@ cd /etc
 cp -v fstab fstab_bkp
 sed -i '/errors=remount-ro/s/rw,errors=remount-ro/rw,errors=remount-ro,noatime,nobarrier,commit=1/g' fstab
 
-echo "Ajustando a senha para o padrão Makro"
-echo "root:lingerseness" | chpasswd
+echo "Ajustando a senha para o padrão CLIENTE"
+echo "root:senha123" | chpasswd
 
 echo "Atualizando as bibliotecas"
 cd /Zanthus/Zeus/path_comum/cargainicial/
