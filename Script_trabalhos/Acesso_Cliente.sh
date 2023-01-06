@@ -70,35 +70,35 @@ read servidor;
 
 	if [ $servidor -eq 1 ]
 	then
-sshpass -p "Cliente@20" ssh -o StrictHostKeyChecking=no t_lfagundes@10.52.234.111
+sshpass -p "Cliente@20" ssh -o StrictHostKeyChecking=no t_lfagundes@192.168.1.111
 
 	elif [ $servidor -eq 2 ]
 	then
-sshpass -p "Cliente@20" ssh -o StrictHostKeyChecking=no t_lfagundes@10.52.234.135
+sshpass -p "Cliente@20" ssh -o StrictHostKeyChecking=no t_lfagundes@192.168.1.135
 	
 	elif [ $servidor -eq 3 ] 
 	then
-sshpass -p "Cliente@20" ssh -o StrictHostKeyChecking=no t_lfagundes@10.52.234.137
+sshpass -p "Cliente@20" ssh -o StrictHostKeyChecking=no t_lfagundes@192.168.1.137
 	
 	elif [ $servidor -eq 4 ] 
 	then
-sshpass -p "Cliente@20" ssh -o StrictHostKeyChecking=no t_lfagundes@10.52.234.120
+sshpass -p "Cliente@20" ssh -o StrictHostKeyChecking=no t_lfagundes@192.168.1.120
 	
 	elif [ $servidor -eq 5 ] 
 	then
-sshpass -p "Cliente@20" ssh -o StrictHostKeyChecking=no t_lfagundes@10.52.234.155
+sshpass -p "Cliente@20" ssh -o StrictHostKeyChecking=no t_lfagundes@192.168.1.155
 	
 	elif [ $servidor -eq 6 ] 
 	then
-sshpass -p "Cliente@20" ssh -o StrictHostKeyChecking=no t_lfagundes@10.52.234.156
+sshpass -p "Cliente@20" ssh -o StrictHostKeyChecking=no t_lfagundes@192.168.1.156
 	
 	elif [ $servidor -eq 7 ] 
 	then
-sshpass -p "Cliente@20" ssh -o StrictHostKeyChecking=no t_lfagundes@10.52.234.157
+sshpass -p "Cliente@20" ssh -o StrictHostKeyChecking=no t_lfagundes@192.168.1.157
 
         elif [ $servidor -eq 8 ]
         then
-sshpass -p "Cliente@20" ssh -o StrictHostKeyChecking=no t_lfagundes@10.52.239.181
+sshpass -p "Cliente@20" ssh -o StrictHostKeyChecking=no t_lfagundes@192.168.1.181
 
 	else 
 echo "###########################################################"
